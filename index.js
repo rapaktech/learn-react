@@ -1,51 +1,46 @@
-function MainContent() {
-    return (
-        <h1>Save The World</h1>
-    )
-}
-
-ReactDOM.render(<ul>
-        <li>First list item</li>
-        <li>Second list item</li>
-    </ul>, 
-    document.getElementById('root-one'))
-
-ReactDOM.render(<div>
-    <MainContent />
-</div>, 
-document.getElementById('root-two'))
-
-const page = (
-    <div>
-        <h1 className='header'>I love JavaScript!</h1>
-        <p>This is JSX</p>
-    </div>
-)
-
 function Page () {
     return (
         <div>
-            <h1 className='header'>I love TypeScript!</h1>
-            <p>This is TSX</p>
+            <Header />
+            <MainContent />
+            <Footer />
         </div>
     )
 }
 
-ReactDOM.render(page, document.getElementById('root-three'))
-ReactDOM.render(
-    <Page />
-    , document.getElementById('root-four'))
+function Header () {
+    return (
+        <header>
+            <nav className="nav">
+                <img className="nav-logo" src="./react-logo.png"></img>
+                <ul className="nav-items">
+                    <li>Pricing</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+        </header>
+    )
+}
 
+function MainContent () {
+    return (
+        <div>
+            <h1>Reasons I'm excited to learn React</h1>
+            <ol>
+                <li>Was first released in 2013</li>
+                <li>Was originally created by Jordan Walke</li>
+            </ol>
+        </div>
+    )
+}
 
-const nav = (
-    <nav>
-        <h1>Jim's Bistro</h1>
-        <ul>
-            <li>Menu</li>
-            <li>About</li>
-            <li>Contact</li>
-        </ul>
-    </nav>
-)
+function Footer () {
+    return (
+        <footer className="footer">
+            <small>© 2022 Jim Ezesinachi. All rights reserved</small>
+        </footer>
+    )
+}
 
-ReactDOM.render(nav, document.getElementById('root-five'))
+ReactDOM.render(<Page />, document.getElementById('root'));
